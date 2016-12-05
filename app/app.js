@@ -4,21 +4,11 @@ var dataFile = require('../data/NodeJson.json');
 
 //Set app environment variables (globally)
 app.set('port', process.env.PORT || 3000);
+app.set('appData', dataFile);
 
-//Create a default route
-app.get('/', function (req, res) {
-    var info = '<ul>';
-    dataFile.speakers.forEach(function (item) {
-        info += `<li>
-                    <h2>${item.name}</h2>
-                    <p>${item.summary}</p>
-                </li>`;
-    });
-    info += '</ul>';
-    
-   res.send(`<h2>Welcome Nodejs and Express</h2>
-        ${info}`); 
-});
+//Require our routes
+app.use(require('./routes/index'));
+app.use(require('./routes/speakers'));
 
 //Create the server
 var server = app.listen(app.get('port'), function () {
