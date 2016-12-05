@@ -1,12 +1,25 @@
 var express = require('express');
 var app = express();
+var dataFile = require('../data/NodeJson.json');
+
+//Set app environment variables (globally)
+app.set('port', process.env.PORT || 3000);
 
 //Create a default route
 app.get('/', function (req, res) {
-   res.send('<h1>Welcome to learning Node</h1>'); 
+    var info = '<ul>';
+    dataFile.speakers.forEach(function (item) {
+        info += '<li><h2>${item.name}</h2>'+
+                    '<p>${item.summary}</p>'+
+                 '</li>';
+    });
+    info += '</ul>';
+    
+   res.send(`${info}`); 
 });
 
 //Create the server
-var server = app.listen(3000, function () {
-    console.log("Server running at port 3000");
+var server = app.listen(app.get('port'), function () {
+    //command: PORT=4000 node app/app.js
+    console.log("Server running at port "+app.get('port'));
 });
