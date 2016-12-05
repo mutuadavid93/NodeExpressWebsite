@@ -9,13 +9,15 @@ app.set('port', process.env.PORT || 3000);
 app.get('/', function (req, res) {
     var info = '<ul>';
     dataFile.speakers.forEach(function (item) {
-        info += '<li><h2>${item.name}</h2>'+
-                    '<p>${item.summary}</p>'+
-                 '</li>';
+        info += `<li>
+                    <h2>${item.name}</h2>
+                    <p>${item.summary}</p>
+                </li>`;
     });
     info += '</ul>';
     
-   res.send(`${info}`); 
+   res.send(`<h2>Welcome Nodejs and Express</h2>
+        ${info}`); 
 });
 
 //Create the server
