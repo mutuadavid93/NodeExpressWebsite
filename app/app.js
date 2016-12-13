@@ -10,6 +10,9 @@ app.set('appData', dataFile);
 app.use(require('./routes/index'));
 app.use(require('./routes/speakers'));
 
+//Designate a folder
+app.use(express.static('app/public'));
+
 //Create the server
 var server = app.listen(app.get('port'), function () {
     //command: PORT=4000 node app/app.js
