@@ -14,6 +14,8 @@ router.get('/speakers/:speakerid', function (req, res) {
         <h2>${speaker.title}</h2>
         <h4>with ${speaker.name}</h4>
         <p>${speaker.summary}</p>
+    
+        <script src="/reload/reload.js"></script>
     `); 
 });
 
@@ -35,6 +37,8 @@ router.get('/speakers', function (req, res) {
         <link rel="stylesheet" href="/css/styles.css"/>
         <h2>Welcome Nodejs and Express</h2>
         ${info}
+        
+        <script src="/reload/reload.js"></script>
     `); 
 });
 

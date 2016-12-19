@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var reload = require('reload');
 var dataFile = require('../data/NodeJson.json');
 
 //Set app environment variables (globally)
@@ -16,5 +17,7 @@ app.use(express.static('app/public'));
 //Create the server
 var server = app.listen(app.get('port'), function () {
     //command: PORT=4000 node app/app.js
-    console.log("Server running at port "+app.get('port'));
+    console.log("Zoombie detected on port "+app.get('port'));
 });
+
+reload(server, app);
