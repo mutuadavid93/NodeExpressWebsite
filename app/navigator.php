@@ -5,8 +5,8 @@
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        
+        <img src="" alt="" />
+        
     </body>
 </html>
