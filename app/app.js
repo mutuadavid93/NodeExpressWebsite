@@ -7,6 +7,10 @@ var dataFile = require('../data/NodeJson.json');
 app.set('port', process.env.PORT || 3000);
 app.set('appData', dataFile);
 
+//configure view engine
+app.set('view engine', 'ejs');
+app.set('views', 'app/views');
+
 //Require our routes
 app.use(require('./routes/index'));
 app.use(require('./routes/speakers'));
