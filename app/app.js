@@ -11,6 +11,9 @@ app.set('appData', dataFile);
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
+//global local var available in all views
+app.locals.siteTitle = 'NodeExpress';
+
 //Require our routes
 app.use(require('./routes/index'));
 app.use(require('./routes/speakers'));

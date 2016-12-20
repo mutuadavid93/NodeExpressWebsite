@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/speakers/:speakerid', function (req, res) {
     var dataFile = req.app.get('appData');
     //get an object from array (speaker)
-    var speaker = dataFile.speakers[req.params.speakerid];
+    var speaker = dataFile.speakers[req.params.speakerid]; 
     
    res.send(`
         <link rel="stylesheet" href="/css/styles.css"/>
@@ -21,25 +21,22 @@ router.get('/speakers/:speakerid', function (req, res) {
 
 //All users route
 router.get('/speakers', function (req, res) {
-    var info = '<ul>';
-    var dataFile = req.app.get('appData');
+    var data = req.app.get('appData');
+    var pagePhotos = [];
     
-    dataFile.speakers.forEach(function (item) {
-        info += `<li>
-                    <h2>${item.name}</h2>
-                    <img src="/images/misc/${item.shortname}_tn.jpg" alt="Speaker" />
-                    <p>${item.summary}</p>
-                </li>`;
+    var pageSpeakers = data.speakers;
+    
+    data.speakers.forEach(function (item) {
+        pagePhotos = pagePhotos.concat(item.artwork);
     });
-    info += '</ul>';
     
-   res.send(`
-        <link rel="stylesheet" href="/css/styles.css"/>
-        <h2>Welcome Nodejs and Express</h2>
-        ${info}
-        
-        <script src="/reload/reload.js"></script>
-    `); 
+    //pass data into a view
+    res.render('speakers', {
+        pageTitle: 'Speakers',
+        pageID: 'speakers',
+        speakers: pageSpeakers,
+        artwork: pagePhotos
+    }); 
 });
 
 module.exports = router;
