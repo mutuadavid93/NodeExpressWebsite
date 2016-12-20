@@ -2,22 +2,20 @@
 <html lang="en">
   <head><% include partials/template/head.ejs %></head>
   <body id="<%= pageID %>">
-      <% include partials/template/header.ejs %>
-      <section class="container">
-          <div class="row">
-                <h2>Nodejs and Express -- <%= pageTitle %></h2>
-                <img class='img-responsive' style="height: 380px; width: 100%;" src="/images/bg/NodeTrain.jpg" alt="Bg Pik" />
-          </div>
-          <div class="row">
-              <div class="col-sm-8">
-                    <% include partials/template/maincontent.ejs %>
-              </div><!-- col-sm-8 -->
-              <div class="col-sm-4 aside">
-                  <% include partials/template/whoshouldcome.ejs %>
-                  <% include partials/template/artworklist.ejs %>
-              </div><!-- col-sm-4 -->
-          </div>
-      </section><!-- container -->
+        <div class="row">
+              <% include partials/template/header.ejs %>
+        </div>
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                      <% include partials/template/maincontent.ejs %>
+                </div><!-- col-sm-8 -->
+                <div class="col-sm-4 aside">
+                    <% include partials/template/whoshouldcome.ejs %>
+                    <% include partials/template/artworklist.ejs %>
+                </div><!-- col-sm-4 -->
+            </div>
+        </section><!-- container -->
       <% include partials/template/scripts.ejs %>
   </body>
 </html>    
