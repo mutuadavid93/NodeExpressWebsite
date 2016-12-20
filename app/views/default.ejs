@@ -4,11 +4,12 @@
   <body id="<%= pageID %>">
         <div class="row">
               <% include partials/template/header.ejs %>
+              <% include partials/template/speakerslist.ejs %>
         </div>
         <section class="container">
             <div class="row">
                 <div class="col-sm-8">
-                      <% include partials/template/maincontent.ejs %>
+                      <% include partials/content/maincontent.ejs %>
                 </div><!-- col-sm-8 -->
                 <div class="col-sm-4 aside">
                     <% include partials/template/whoshouldcome.ejs %>

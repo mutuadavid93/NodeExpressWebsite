@@ -13,6 +13,7 @@ app.set('views', 'app/views');
 
 //global local var available in all views
 app.locals.siteTitle = 'NodeExpress';
+app.locals.allSpeakers = dataFile.speakers;
 
 //Require our routes
 app.use(require('./routes/index'));

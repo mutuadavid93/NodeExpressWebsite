@@ -4,19 +4,25 @@ var router = express.Router();
 
 //Single speaker
 router.get('/speakers/:speakerid', function (req, res) {
-    var dataFile = req.app.get('appData');
-    //get an object from array (speaker)
-    var speaker = dataFile.speakers[req.params.speakerid]; 
+    var data = req.app.get('appData');
+    var pagePhotos = [];
     
-   res.send(`
-        <link rel="stylesheet" href="/css/styles.css"/>
-        <img src="/images/misc/${speaker.shortname}_tn.jpg" alt="Speaker" />
-        <h2>${speaker.title}</h2>
-        <h4>with ${speaker.name}</h4>
-        <p>${speaker.summary}</p>
+    var pageSpeakers = [];
     
-        <script src="/reload/reload.js"></script>
-    `); 
+    data.speakers.forEach(function (item) {
+        if(item.shortname === req.params.speakerid){
+            pageSpeakers.push(item);
+            pagePhotos = pagePhotos.concat(item.artwork);
+        }
+    });
+    
+    //pass data into a view
+    res.render('speakers', {
+        pageTitle: 'Speakers Info',
+        pageID: 'speakerDetail',
+        speakers: pageSpeakers,
+        artwork: pagePhotos
+    }); 
 });
 
 //All users route
@@ -33,7 +39,7 @@ router.get('/speakers', function (req, res) {
     //pass data into a view
     res.render('speakers', {
         pageTitle: 'Speakers',
-        pageID: 'speakers',
+        pageID: 'speakerList',
         speakers: pageSpeakers,
         artwork: pagePhotos
     }); 
