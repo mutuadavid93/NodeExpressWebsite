@@ -18,6 +18,7 @@ app.locals.allSpeakers = dataFile.speakers;
 //Require our routes
 app.use(require('./routes/index'));
 app.use(require('./routes/speakers'));
+app.use(require('./routes/feedback'));
 
 //Designate a folder
 app.use(express.static('app/public'));
