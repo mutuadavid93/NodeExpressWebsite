@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/routes/speakers.js</file>
-            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/app.js</file>
-            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/views/speakers.ejs</file>
-            <file>file:/C:/xampp/htdocs/RayNodeExpress/data/NodeJson.json</file>
-            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/views/partials/template/speakerslist.ejs</file>
-            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/routes/index.js</file>
+            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/routes/api.js</file>
+            <file>file:/C:/xampp/htdocs/RayNodeExpress/.gitignore</file>
+            <file>file:/C:/xampp/htdocs/RayNodeExpress/README.md</file>
+            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/public/js/feedback.js</file>
+            <file>file:/C:/xampp/htdocs/RayNodeExpress/app/routes/feedback.js</file>
         </group>
     </open-files>
 </project-private>
